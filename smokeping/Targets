@@ -1,0 +1,113 @@
+*** Targets ***
+
+probe = FPing
+
+menu = Top
+title = Network Latency Grapher
+remark = Welcome to the SmokePing website of xxx Company. \
+         Here you will learn all about the latency of our network.
+
++ ICMP
+probe = FPing
+menu = icmp
+title = Network status
+alerts = someloss
+++ Limelight-icmp
+menu = llnw-icmp
+title = Limelight
+host = 69.28.143.23
+
+++ LG-icmp
+menu = lg-icmp
+title = LG DNS
+host = 164.124.101.2
+
+++ KT-icmp
+menu = kt-icmp
+title = KT DNS
+host = 168.126.63.1
+
+++ SK-icmp
+menu = sk-icmp
+title = SK DNS
+host = 210.220.163.82
+
+++ KINX-icmp
+menu = kinx-icmp
+title = KINX.net
+host = 1.201.168.13 
+
+++ ICMP-sum
+menu = ICMP report
+title = Monitoring various ISPs
+host = /ICMP/Limelight-icmp /ICMP/LG-icmp /ICMP/KT-icmp /ICMP/SK-icmp /ICMP/KINX-icmp
+
++ DNS
+probe = DNS
+menu = dns
+title = DNS status
+alerts = someloss
+
+++ Limelight-DNS
+menu = llnw-dns
+title = Limelight
+host = 69.28.143.23
+
+++ LG-DNS
+menu = lg-dns
+title = LG DNS
+host = 164.124.101.2
+
+++ KT-DNS
+menu = kt-dns
+title = KT DNS
+host = 168.126.63.1
+
+++ SK-DNS
+menu = sk-dns
+title = SK DNS
+host = 210.220.163.82
+
+++ Google-DNS
+menu = google-dns
+title = Google
+host = 8.8.8.8
+
+++ DNS-sum
+menu = DNS report
+title = Monitoring various DNS
+host = /DNS/Limelight-DNS /DNS/LG-DNS /DNS/KT-DNS /DNS/SK-DNS /DNS/Google-DNS
+
+
+
++ HTTP
+menu = http
+title = HTTP latency
+probe = Curl
+pings = 5
+alerts = someloss
+
+++ lg-origin
+menu = lg-org
+title = HTTP latency for Origin
+host = www.lge.co.kr
+urlformat = https://%host%/lgekor/asset/images/web/temp/gnb_promotion01.png
+
+++ lg-cdn
+menu = lg-cdn
+title = HTTP latency for Limelight Networks CDN
+host = image5.lge.co.kr
+urlformat = https://%host%/lgekor/asset/images/web/newmain/banner/thumb_recommend_tv_monitor.jpg
+
+++ HTTP-sum
+menu =HTTP report
+title = Monitoring HTTP
+host = /HTTP/lg-origin /HTTP/lg-cdn
+urlformat = https://%host%/lgekor/asset/images/web/newmain/banner/thumb_recommend_tv_monitor.jpg
+
+
+++ carrot
+menu = carrot
+title = HTTP latency for  TEST
+host = www.lge.co.kr
+urlformat = https://%host%/lgekor/asset/images/web/newmain/banner/thumb_recommend_tv_monitor.jpg

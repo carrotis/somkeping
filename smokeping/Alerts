@@ -1,0 +1,10 @@
+*** Alerts ***
+to = carrotis@gmail.com
+from = carrotis@gmail.com
+
++someloss
+type = loss
+# in percent
+pattern = >0%,*12*,>0%,*12*,>0%
+comment = loss 3 times  in a row
+

@@ -1,0 +1,17 @@
+*** Probes ***
+
++ FPing
+binary = /usr/bin/fping
+
++ DNS
+binary = /usr/bin/dig
+pings = 5
+step = 180
+lookup = image5.lge.co.kr
+#lookup = lgimg5cokr.s.llnwi.net
+
++Curl
+binary = /usr/bin/curl
+forks = 5
+offset = 50%
+step = 300
